@@ -1,0 +1,567 @@
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.grid {
+    display: grid;
+    grid-gap: 1.5vw;
+    min-height: 100vh;
+    padding: 1.5vw;
+  } 
+
+.grid {
+/*    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;*/
+
+/*    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50vh 30vh repeat(7, minmax(20vh, 1fr));*/
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "hero   hero2"
+      "hero3   hero4"
+      "med1 med1"
+      "small1 small2"
+      "small3 small4"
+      "small5 small6";
+  }
+
+/*Grid Issue*/
+.grid .item:nth-child(1)  { grid-area: hero; }
+.grid .item:nth-child(2)  { grid-area: hero2; }
+.grid .item:nth-child(3)  { grid-area: hero3; }
+/*.grid .item:nth-child(4)  { grid-area: hero4; }
+.grid .item:nth-child(5)  { grid-area: med1; }
+.grid .item:nth-child(6)  { grid-area: small1; }
+.grid .item:nth-child(7)  { grid-area: small2; }
+.grid .item:nth-child(8)  { grid-area: small3; }
+.grid .item:nth-child(9)  { grid-area: small4; }
+.grid .item:nth-child(10)  { grid-area: small5; }
+.grid .item:nth-child(11)  { grid-area: small6; }*/
+
+
+/*Grid Issue*/
+
+
+*,*:before,*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: #e67e22;
+}
+
+@supports not (display: grid) {
+  body:before {
+    content: 'Sorry, seems like your browser doesn\'t support display: grid. Below is the flexbox fallback.';
+    display: block;
+    padding: 2rem 2rem 0;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+
+.header {
+  margin: 10vh 1.5vw;
+  text-align: center;
+  color: #cedfe9;
+}
+
+.header {
+  margin: 10vh 1.5vw;
+  text-align: center;
+  color: #cedfe9;
+}
+
+.header h1,
+.header h2 {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+.header h1 {
+  position: relative;
+  padding-bottom: 0.5em;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.header h2 {
+  font-weight: normal;
+  font-size: 0.875rem;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.diamond {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 90px;
+  height: 90px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  background-image: linear-gradient(to top left, #ddd 0%, #fff 100%);
+  text-align: center;
+  transform-origin: center;
+  transform: rotateZ(45deg);
+  transition: box-shadow 250ms, transform 250ms;
+}
+
+
+.diamond span {
+  font-weight: bold;
+  transform: rotateZ(-45deg)
+}
+
+.grid .item:hover .diamond,
+.grid .item:focus .diamond {
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  transform:  rotateZ(45deg) scale(1.2);
+}
+
+.grid .item {
+  position: relative;
+  padding: 1vw;
+  background-position:  left bottom;
+  background-size: 150% 100%;
+  transition: background 500ms, outline 500ms;
+  background-position: top left;
+  outline: transparent;
+}
+
+.grid .item:hover,
+.grid .item:focus {
+  background-position: top right;
+}
+
+.grid .item:focus {
+  outline: 2px solid #3eabfa;
+}
+
+/*Second Grid Issue*/
+
+.grid .item:nth-child(1) {background-color: #007E99}/*{ background-image: linear-gradient(45deg, #cbabfb 0%, #fb7ef6 60%); }*/
+.grid .item:nth-child(2) {background-color: #007E99}/*{ background-image: linear-gradient(45deg, #fb7ef6 0%, #cbabfb 60%); }*/
+.grid .item:nth-child(3) {background-color: #007E99}/*{ background-image: linear-gradient(45deg, #70c1fb 0%, #79ebe0 60%); }*/
+/*.grid .item:nth-child(4) { background-image: linear-gradient(45deg, #79ebe0 0%, #70c1fb 60%); }
+.grid .item:nth-child(5) { background-image: linear-gradient(45deg, #feeeab 0%, #fb7eb3 60%); }
+.grid .item:nth-child(6){ background-image: linear-gradient(45deg, #feeeab 0%, #fb7eb3 60%); }
+.grid .item:nth-child(7) { background-image: linear-gradient(45deg, #feeeab 0%, #fb7eb3 60%); }
+.grid .item:nth-child(8){ background-image: linear-gradient(45deg, #feeeab 0%, #fb7eb3 60%); }
+.grid .item:nth-child(9){ background-image: linear-gradient(45deg, #feeeab 0%, #fb7eb3 60%); }
+.grid .item:nth-child(10){ background-image: linear-gradient(45deg, #feeeab 0%, #fb7eb3 60%); }
+.grid .item:nth-child(11){ background-image: linear-gradient(45deg, #feeeab 0%, #fb7eb3 60%); }
+*/
+
+
+a {
+  color: inherit; 
+  text-decoration: inherit; 
+}
+
+h1{
+font-family: 'Open Sans', sans-serif;
+}
+
+p{
+  font-family: 'Lora', serif;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+/*.diamond1{
+  width: 190px;
+  height: 190px;
+}
+
+.big-monday{
+  font-size: 2em;
+}*/
+
+/**/
+
+
+
+.btnStyle{
+    background-color: red; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.btnStyle:hover{
+    background-color: #27ae60;
+    color: white;
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media screen and (min-width: 750px) {
+    .grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+   grid-template-areas:
+       "hero"
+       "hero2"
+       "hero3"
+    }
+   .header h1 {
+    font-size: 3.75rem;
+  }
+
+  .header h2 {
+    font-weight: normal;
+    font-size: 1.125rem;
+    letter-spacing: 0.5em;
+  }
+  
+/*  .diamond1{
+  width: 190px;
+  height: 190px;
+  }*/
+  
+/*  .big-monday{
+    font-size: 2em;
+    transform: rotateZ(-45deg)
+  }
+   .big-monday-code{
+    font-size: 2em;
+    transform: rotateZ(-45deg)
+  }*/
+/*  .big-friday-code{
+    font-size: 1.5em;
+    transform: rotateZ(-45deg)
+  }
+  .big-friday-podcast{
+    font-size: 1.5em;
+    transform: rotateZ(-45deg)
+  }*/
+
+/*  .diamond2{
+  width: 100px;
+  height: 100px;
+  }*/
+
+/*  .diamond3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 290px;
+  height: 90px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  box-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+  background-image: linear-gradient(to top left, #ddd 0%, #fff 100%);
+  text-align: center;
+  transform-origin: center;
+  transform: rotateZ(0);
+  transition: box-shadow 250ms, transform 250ms;
+  }*/
+
+  }
+  }
+
+  @media screen and (min-width: 1400px) {
+    .grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+       "hero"
+       "hero2"
+       "hero3"
+    }
+    
+    .header h1 {
+    font-size: 6rem;
+  }
+
+    .header h2 {
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
+
+/*  .diamond1{
+  width: 190px;
+  height: 190px;
+  }
+  */
+  }
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
